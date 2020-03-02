@@ -228,7 +228,7 @@
 <h3 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h3><h4 id="1，categories和tags等页面404，需要配置："><a href="#1，categories和tags等页面404，需要配置：" class="headerlink" title="1，categories和tags等页面404，需要配置："></a>1，categories和tags等页面404，需要配置：</h4><p>新建相关page：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br><span class="line">hexo new page tags</span><br><span class="line">vi source&#x2F;tags&#x2F;index.md</span><br></pre></td></tr></table></figure><br>修改如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-03-02 15:23:37</span><br><span class="line"><span class="built_in">type</span>: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure><br>然后，去掉主题配置文件menu对应注释<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  about: /about/ || user</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br></pre></td></tr></table></figure><br>然后重启，<em>*一定先要hexo clean</em></p>
 <h4 id="关于latex公式不能正常显示"><a href="#关于latex公式不能正常显示" class="headerlink" title="关于latex公式不能正常显示"></a>关于latex公式不能正常显示</h4><p>首先，在next主题配置文件中打开math相关配置。<br>然后，如果仍然有不不兼容的情况，主要可能有以下问题：</p>
 <ul>
-<li>x<em>0要写成{x}</em>{0}，避免下划线与斜体冲突；</li>
+<li>x_0要写成{x}_{0}，避免下划线与斜体冲突；</li>
 <li>出现连续两个”{“的时候，两个”{“之间要有空格，或者前后用”"和"“包裹起来。</li>
 </ul>
 
@@ -316,7 +316,7 @@
 <p>t检验公式：</p>
 <script type="math/tex; mode=display">t=\frac{\bar{x}-{\mu}_{0}}{\frac{\sigma}{\sqrt{n-1}}}</script><p>一般当n&gt;30时，也可以用公式：</p>
 <script type="math/tex; mode=display">t=\frac{\bar{x}-{\mu}_{0}}{\frac{\sigma}{\sqrt{n}}}</script><p>举例：难产儿出生数n = 35，体重均值$\bar{x}$ = 3.42，${\sigma}$ = 0.40，一般婴儿出生体重 ${\mu}_{0}$= 3.30（大规模调查获得），问相同否？</p>
-<p>1，建立假设：${H}<em>{0}$: $\mu={\mu}</em>{0}$（零假设）; ${H}<em>{1}$: $\mu\neq{\mu}</em>{0}$（备择假设），双侧检验检验水准：α=0.05</p>
+<p>1，建立假设：${H}_{0}$: $\mu={\mu}_{0}$（零假设）; ${H}_{1}$: $\mu\neq{\mu}_{0}$（备择假设），双侧检验检验水准：α=0.05</p>
 <p>2，计算检验统计量：</p>
 <script type="math/tex; mode=display">t=\frac{\bar{x}-{\mu}_{0}}{\frac{\sigma}{\sqrt{n}}}=\frac{3.42-3.3}{\frac{0.4}{\sqrt{35}}}=1.77</script><script type="math/tex; mode=display">\upsilon=n-1=34$$（其中$\upsilon$是自由度）
 
