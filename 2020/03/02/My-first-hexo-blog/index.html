@@ -79,17 +79,21 @@
 
 
 
-<meta name="description" content="Hi i&#39;m star">
-<meta property="og:type" content="website">
-<meta property="og:title" content="star&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="1. 摘要本文主要讨论了推荐系统中小样本的问题，首先提出推荐系统中可能遇到小样本的问题，然后介绍了必要的数据知识——点估计和区间估计，之后结合具体案例解答“多少样本量算是小样本“和“小样本该如何处理”这两个问题。  2. 应用场景推荐系统中，构建离线召回列表或利用模型进行pCTR或pCVR打分，就是利用最近一段时期的历史行为预估最近一段时期的未来行为，这里有两个基本假设：1，历史行为和未来行为具有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My first hexo blog">
+<meta property="og:url" content="http://yoursite.com/2020/03/02/My-first-hexo-blog/index.html">
 <meta property="og:site_name" content="star&#39;s blog">
-<meta property="og:description" content="Hi i&#39;m star">
+<meta property="og:description" content="1. 摘要本文主要讨论了推荐系统中小样本的问题，首先提出推荐系统中可能遇到小样本的问题，然后介绍了必要的数据知识——点估计和区间估计，之后结合具体案例解答“多少样本量算是小样本“和“小样本该如何处理”这两个问题。  2. 应用场景推荐系统中，构建离线召回列表或利用模型进行pCTR或pCVR打分，就是利用最近一段时期的历史行为预估最近一段时期的未来行为，这里有两个基本假设：1，历史行为和未来行为具有">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200207155812198.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hvbmd4aW5nYWJj,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-03-02T04:07:09.000Z">
+<meta property="article:modified_time" content="2020-03-02T06:06:02.114Z">
 <meta property="article:author" content="starxhong">
 <meta property="article:tag" content="math">
 <meta property="article:tag" content=" code">
 <meta property="article:tag" content=" and love">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200207155812198.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hvbmd4aW5nYWJj,size_16,color_FFFFFF,t_70">
 
 
 
@@ -119,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/02/My-first-hexo-blog/"/>
 
 
 
 
 
-  <title>star's blog</title>
+  <title>My first hexo blog | star's blog</title>
   
 
 
@@ -144,8 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,9 +251,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -280,9 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/02/My-first-hexo-blog/" itemprop="url">My first hexo blog</a></h1>
+          <h1 class="post-title" itemprop="name headline">My first hexo blog</h1>
         
 
         <div class="post-meta">
@@ -332,9 +333,7 @@
       
 
       
-        
-          
-            <h2 id="1-摘要"><a href="#1-摘要" class="headerlink" title="1. 摘要"></a>1. 摘要</h2><p>本文主要讨论了推荐系统中小样本的问题，首先提出推荐系统中可能遇到小样本的问题，然后介绍了必要的数据知识——点估计和区间估计，之后结合具体案例解答“多少样本量算是小样本“和“小样本该如何处理”这两个问题。</p>
+        <h2 id="1-摘要"><a href="#1-摘要" class="headerlink" title="1. 摘要"></a>1. 摘要</h2><p>本文主要讨论了推荐系统中小样本的问题，首先提出推荐系统中可能遇到小样本的问题，然后介绍了必要的数据知识——点估计和区间估计，之后结合具体案例解答“多少样本量算是小样本“和“小样本该如何处理”这两个问题。</p>
 <hr>
 <h2 id="2-应用场景"><a href="#2-应用场景" class="headerlink" title="2. 应用场景"></a>2. 应用场景</h2><p>推荐系统中，构建离线召回列表或利用模型进行pCTR或pCVR打分，就是利用最近一段时期的历史行为预估最近一段时期的未来行为，这里有两个基本假设：<br>1，历史行为和未来行为具有相同或相近的数据分布；<br>2，一段时期的历史行为数据可以反映真实的数据分布；<br><strong>对于假设1</strong>，在场景和用户相对稳定的情况下基本成立，不过实际推荐系统中，很多badcase就是因为这个假设不成立，比如某直播平台人气女主播解说篮球吸引了大量用户，推荐系统以为这些用户喜欢篮球，下一时段推荐系统给这些用户推荐其他篮球类节目，发现效果并不好，因为很多是冲着女主播去的。再如某电商平台的“秒杀”场景，上一时段火爆的商品，下一时段已经下架了。关于假设1，这里不展开说，我们的重点是假设2。<br><strong>关于假设2</strong>，一段时期的历史行为数据可以看作真实数据分布的一个采样，真实的数据分布通过这个采样进行估计。我们直观的知道当样本数据量越大则统计特征越可靠，模型泛化能力越强。<br>以电商商品推荐为例：单位时间内，商品A曝光1万次，点击100次，样本点击率1%；商品B曝光50次，点击1次，样本点击率2%。我们显然不能说，商品B比商品A总体点击率高，更值得被推荐。<br>对于样本不足的问题，我们也叫小样本问题，后面我们将介绍：<br><strong>1，多少样本算小样本？</strong><br><strong>2，如何处理小样本？</strong></p>
 <hr>
@@ -372,8 +371,6 @@ $$n=\frac{{t^2}{\sigma^2}}{err^2}=\frac{{1.96^2}*{0.15*(1-0.15)}}{0.03^2}\approx
 <p>针对小样本问题，业界常用的是威尔逊置信区间：<br>$$\frac{\overline p +\frac{z^2}{2n}}{1+\frac{z^2}{2n}} \pm \frac{z}{1+\frac{z^2}{2n}} \sqrt{ \frac{\overline p(1- \overline p)}{n} + \frac{z^2}{4n^2}}$$<br>其中，$\overline p$表示的是样本统计概率，n表示发生的总次数，z表示置信参数，置信度95%时等于1.96。以上面电商app点击率为例，其威尔逊置信区间为：[0.1634-0.0648, 0.1634+0.0648]. 实际我们一般按照下限进行估计，即0.0986，起到一定的打压作用。<br><a href="https://www.zhihu.com/question/26933554" target="_blank" rel="noopener">参考知乎排序规则</a></p>
 <hr>
 
-          
-        
       
     </div>
     
@@ -390,144 +387,28 @@ $$n=\frac{{t^2}{\sigma^2}}{err^2}=\frac{{1.96^2}*{0.15*(1-0.15)}}{0.03^2}\approx
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="starxhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="star's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/02/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-02T11:07:33+08:00">
-                2020-03-02
-              </time>
+              <a href="/2020/03/02/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -537,10 +418,11 @@ $$n=\frac{{t^2}{\sigma^2}}{err^2}=\frac{{1.96^2}*{0.15*(1-0.15)}}{0.03^2}\approx
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -548,6 +430,10 @@ $$n=\frac{{t^2}{\sigma^2}}{err^2}=\frac{{1.96^2}*{0.15*(1-0.15)}}{0.03^2}\approx
 
 
           
+
+  
+
+
 
         </div>
         
@@ -568,8 +454,17 @@ $$n=\frac{{t^2}{\sigma^2}}{err^2}=\frac{{1.96^2}*{0.15*(1-0.15)}}{0.03^2}\approx
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -611,6 +506,22 @@ $$n=\frac{{t^2}{\sigma^2}}{err^2}=\frac{{1.96^2}*{0.15*(1-0.15)}}{0.03^2}\approx
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-摘要"><span class="nav-number">1.</span> <span class="nav-text">1. 摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-应用场景"><span class="nav-number">2.</span> <span class="nav-text">2. 应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-点估计和区间估计"><span class="nav-number">3.</span> <span class="nav-text">3. 点估计和区间估计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#点估计"><span class="nav-number">3.1.</span> <span class="nav-text">点估计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区间估计"><span class="nav-number">3.2.</span> <span class="nav-text">区间估计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-大样本和小样本"><span class="nav-number">4.</span> <span class="nav-text">4. 大样本和小样本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#t检验"><span class="nav-number">4.1.</span> <span class="nav-text">t检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小样本量"><span class="nav-number">4.2.</span> <span class="nav-text">最小样本量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小样本的处理——威尔逊区间估计"><span class="nav-number">4.3.</span> <span class="nav-text">小样本的处理——威尔逊区间估计</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -751,6 +662,10 @@ $$n=\frac{{t^2}{\sigma^2}}{err^2}=\frac{{1.96^2}*{0.15*(1-0.15)}}{0.03^2}\approx
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -808,26 +723,6 @@ $$n=\frac{{t^2}{\sigma^2}}{err^2}=\frac{{1.96^2}*{0.15*(1-0.15)}}{0.03^2}\approx
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
