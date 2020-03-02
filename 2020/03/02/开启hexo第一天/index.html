@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="基本流程1，安装git和nodegit已经安装过了。用brewhome安装node： 1brew install node 安装成功。 2，安装hexo1npm install -g hexo 报错：“error Cannot convert name to ASCII”，网上查说是icu的版本问题。解决方法：更新brewhome, 重新安装node 1brew update 中间又遇到brew">
+  <meta name="description" content="基本流程  1，安装git和node git已经安装过了。 用brewhome安装node： 1brew install node 安装成功。  2，安装hexo 1npm install -g hexo 报错：“error Cannot convert name to ASCII”，网上查说是icu的版本问题。 解决方法：更新brewhome, 重新安装node 1brew update 中间">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开启hexo第一天">
 <meta property="og:url" content="http://yoursite.com/2020/03/02/%E5%BC%80%E5%90%AFhexo%E7%AC%AC%E4%B8%80%E5%A4%A9/index.html">
 <meta property="og:site_name" content="洪星的博客">
-<meta property="og:description" content="基本流程1，安装git和nodegit已经安装过了。用brewhome安装node： 1brew install node 安装成功。 2，安装hexo1npm install -g hexo 报错：“error Cannot convert name to ASCII”，网上查说是icu的版本问题。解决方法：更新brewhome, 重新安装node 1brew update 中间又遇到brew">
+<meta property="og:description" content="基本流程  1，安装git和node git已经安装过了。 用brewhome安装node： 1brew install node 安装成功。  2，安装hexo 1npm install -g hexo 报错：“error Cannot convert name to ASCII”，网上查说是icu的版本问题。 解决方法：更新brewhome, 重新安装node 1brew update 中间">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-02T08:33:22.000Z">
 <meta property="article:modified_time" content="2020-03-02T09:43:27.432Z">
@@ -213,36 +213,51 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><h3 id="1，安装git和node"><a href="#1，安装git和node" class="headerlink" title="1，安装git和node"></a>1，安装git和node</h3><p>git已经安装过了。<br>用brewhome安装node：</p>
+        <h2 id="基本流程"><a class="markdownIt-Anchor" href="#基本流程"></a> 基本流程</h2>
+<h3 id="1安装git和node"><a class="markdownIt-Anchor" href="#1安装git和node"></a> 1，安装git和node</h3>
+<p>git已经安装过了。<br />
+用brewhome安装node：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
 <p>安装成功。</p>
-<h3 id="2，安装hexo"><a href="#2，安装hexo" class="headerlink" title="2，安装hexo"></a>2，安装hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>报错：“error Cannot convert name to ASCII”，网上查说是icu的版本问题。<br>解决方法：更新brewhome, 重新安装node</p>
+<h3 id="2安装hexo"><a class="markdownIt-Anchor" href="#2安装hexo"></a> 2，安装hexo</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+<p>报错：“error Cannot convert name to ASCII”，网上查说是icu的版本问题。<br />
+解决方法：更新brewhome, 重新安装node</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
-<p>中间又遇到brew update的问题，因为访问不了github，报400错误。<br>解决方法：git配置了代理，取消掉代理。（公司网络问题基本上都是代理的锅）</p>
-<h3 id="3，测试hexo"><a href="#3，测试hexo" class="headerlink" title="3，测试hexo"></a>3，测试hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init # 当前路径下生成blog目录</span><br><span class="line">cd blog</span><br><span class="line">npm install # 安装依赖包</span><br><span class="line">hexo generate # 生成静态页面&#x3D;hexo g</span><br><span class="line">hexo server # 启动服务&#x3D;hexo s</span><br></pre></td></tr></table></figure>
+<p>中间又遇到brew update的问题，因为访问不了github，报400错误。<br />
+解决方法：git配置了代理，取消掉代理。（公司网络问题基本上都是代理的锅）</p>
+<h3 id="3测试hexo"><a class="markdownIt-Anchor" href="#3测试hexo"></a> 3，测试hexo</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init # 当前路径下生成blog目录</span><br><span class="line">cd blog</span><br><span class="line">npm install # 安装依赖包</span><br><span class="line">hexo generate # 生成静态页面&#x3D;hexo g</span><br><span class="line">hexo server # 启动服务&#x3D;hexo s</span><br></pre></td></tr></table></figure>
 <p>服务能起来，说明装好了。这个服务是本地作为服务器，只是用来测试。我用github的个人仓库作为服务器。</p>
-<h3 id="4，github配置"><a href="#4，github配置" class="headerlink" title="4，github配置"></a>4，github配置</h3><p>github新建repo，名为username.github.io，该工程路径为：<a href="https://github.com/username/username.github.io.git" target="_blank" rel="noopener">https://github.com/username/username.github.io.git</a></p>
-<h3 id="5，hexo和github关联配置"><a href="#5，hexo和github关联配置" class="headerlink" title="5，hexo和github关联配置"></a>5，hexo和github关联配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">vim _config.yml <span class="comment"># 修改站点配置</span></span><br></pre></td></tr></table></figure>
+<h3 id="4github配置"><a class="markdownIt-Anchor" href="#4github配置"></a> 4，github配置</h3>
+<p>github新建repo，<a href="http://xn--username-wg0m349b.github.io" target="_blank" rel="noopener">名为username.github.io</a>，该工程路径为：<a href="https://github.com/username/username.github.io.git" target="_blank" rel="noopener">https://github.com/username/username.github.io.git</a></p>
+<h3 id="5hexo和github关联配置"><a class="markdownIt-Anchor" href="#5hexo和github关联配置"></a> 5，hexo和github关联配置</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">vim _config.yml <span class="comment"># 修改站点配置</span></span><br></pre></td></tr></table></figure>
 <p>修改的项包括：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/username/username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-安装git部署插件"><a href="#6-安装git部署插件" class="headerlink" title="6, 安装git部署插件"></a>6, 安装git部署插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<h3 id="7，静态页面部署："><a href="#7，静态页面部署：" class="headerlink" title="7，静态页面部署："></a>7，静态页面部署：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean <span class="comment"># 清理缓存和静态结果。——否则修改可能不起作用。</span></span><br><span class="line">hexo g <span class="comment"># 生成</span></span><br><span class="line">hexo deploy <span class="comment"># 部署=hexo d, 生成的静态页面会推送到github上</span></span><br><span class="line"><span class="comment">#上面两句可以合成为：hexo -g d或者 hexo -d g</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-安装git部署插件"><a class="markdownIt-Anchor" href="#6-安装git部署插件"></a> 6, 安装git部署插件</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h3 id="7静态页面部署"><a class="markdownIt-Anchor" href="#7静态页面部署"></a> 7，静态页面部署：</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean <span class="comment"># 清理缓存和静态结果。——否则修改可能不起作用。</span></span><br><span class="line">hexo g <span class="comment"># 生成</span></span><br><span class="line">hexo deploy <span class="comment"># 部署=hexo d, 生成的静态页面会推送到github上</span></span><br><span class="line"><span class="comment">#上面两句可以合成为：hexo -g d或者 hexo -d g</span></span><br></pre></td></tr></table></figure>
 <p>可以通过域名：username.github.io访问我们到博客。</p>
-<h2 id="next主题配置"><a href="#next主题配置" class="headerlink" title="next主题配置"></a>next主题配置</h2><h3 id="配置文档"><a href="#配置文档" class="headerlink" title="配置文档"></a>配置文档</h3><p> 比较流行next主题,参考<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html</a>配置。</p>
-<h3 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h3><h4 id="1，categories和tags等页面404，需要配置："><a href="#1，categories和tags等页面404，需要配置：" class="headerlink" title="1，categories和tags等页面404，需要配置："></a>1，categories和tags等页面404，需要配置：</h4><p>新建相关page：</p>
+<h2 id="next主题配置"><a class="markdownIt-Anchor" href="#next主题配置"></a> next主题配置</h2>
+<h3 id="配置文档"><a class="markdownIt-Anchor" href="#配置文档"></a> 配置文档</h3>
+<p>比较流行next主题,参考<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html</a>配置。</p>
+<h3 id="主要问题"><a class="markdownIt-Anchor" href="#主要问题"></a> 主要问题</h3>
+<h4 id="1categories和tags等页面404需要配置"><a class="markdownIt-Anchor" href="#1categories和tags等页面404需要配置"></a> 1，categories和tags等页面404，需要配置：</h4>
+<p>新建相关page：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br><span class="line">hexo new page tags</span><br><span class="line">vi source&#x2F;tags&#x2F;index.md</span><br></pre></td></tr></table></figure>
 <p>修改如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-03-02 15:23:37</span><br><span class="line"><span class="built_in">type</span>: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <p>然后，去掉主题配置文件menu对应注释</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  about: /about/ || user</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br></pre></td></tr></table></figure>
-<p>然后重启，<em>*一定先要hexo clean</em></p>
-<h4 id="关于latex公式不能正常显示"><a href="#关于latex公式不能正常显示" class="headerlink" title="关于latex公式不能正常显示"></a>关于latex公式不能正常显示</h4><p>首先，在next主题配置文件中打开math相关配置。<br>然后，如果仍然有不不兼容的情况，主要可能有以下问题：</p>
+<p>然后重启，*<em>一定先要hexo clean</em></p>
+<h4 id="关于latex公式不能正常显示"><a class="markdownIt-Anchor" href="#关于latex公式不能正常显示"></a> 关于latex公式不能正常显示</h4>
+<p>首先，在next主题配置文件中打开math相关配置。<br />
+然后，如果仍然有不不兼容的情况，主要可能有以下问题：</p>
 <ul>
 <li>x_0要写成{x}_{0}，避免下划线与斜体冲突；</li>
-<li>出现连续两个”{“的时候，两个”{“之间要有空格，或者前后用”"和"“包裹起来。</li>
+<li>出现连续两个&quot;{“的时候，两个”{“之间要有空格，或者前后用”"和"&quot;包裹起来。</li>
 </ul>
 
     </div>
@@ -326,7 +341,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本流程"><span class="nav-number">1.</span> <span class="nav-text">基本流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1，安装git和node"><span class="nav-number">1.1.</span> <span class="nav-text">1，安装git和node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2，安装hexo"><span class="nav-number">1.2.</span> <span class="nav-text">2，安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3，测试hexo"><span class="nav-number">1.3.</span> <span class="nav-text">3，测试hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4，github配置"><span class="nav-number">1.4.</span> <span class="nav-text">4，github配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5，hexo和github关联配置"><span class="nav-number">1.5.</span> <span class="nav-text">5，hexo和github关联配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-安装git部署插件"><span class="nav-number">1.6.</span> <span class="nav-text">6, 安装git部署插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7，静态页面部署："><span class="nav-number">1.7.</span> <span class="nav-text">7，静态页面部署：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题配置"><span class="nav-number">2.</span> <span class="nav-text">next主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文档"><span class="nav-number">2.1.</span> <span class="nav-text">配置文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要问题"><span class="nav-number">2.2.</span> <span class="nav-text">主要问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1，categories和tags等页面404，需要配置："><span class="nav-number">2.2.1.</span> <span class="nav-text">1，categories和tags等页面404，需要配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于latex公式不能正常显示"><span class="nav-number">2.2.2.</span> <span class="nav-text">关于latex公式不能正常显示</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本流程"><span class="nav-number">1.</span> <span class="nav-text"> 基本流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1安装git和node"><span class="nav-number">1.1.</span> <span class="nav-text"> 1，安装git和node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2安装hexo"><span class="nav-number">1.2.</span> <span class="nav-text"> 2，安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3测试hexo"><span class="nav-number">1.3.</span> <span class="nav-text"> 3，测试hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4github配置"><span class="nav-number">1.4.</span> <span class="nav-text"> 4，github配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5hexo和github关联配置"><span class="nav-number">1.5.</span> <span class="nav-text"> 5，hexo和github关联配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-安装git部署插件"><span class="nav-number">1.6.</span> <span class="nav-text"> 6, 安装git部署插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7静态页面部署"><span class="nav-number">1.7.</span> <span class="nav-text"> 7，静态页面部署：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题配置"><span class="nav-number">2.</span> <span class="nav-text"> next主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文档"><span class="nav-number">2.1.</span> <span class="nav-text"> 配置文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要问题"><span class="nav-number">2.2.</span> <span class="nav-text"> 主要问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1categories和tags等页面404需要配置"><span class="nav-number">2.2.1.</span> <span class="nav-text"> 1，categories和tags等页面404，需要配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于latex公式不能正常显示"><span class="nav-number">2.2.2.</span> <span class="nav-text"> 关于latex公式不能正常显示</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -440,6 +455,11 @@
   
 
   
+      
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
+  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
+
 
   
 
